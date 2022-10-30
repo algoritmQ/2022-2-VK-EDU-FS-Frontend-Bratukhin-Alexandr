@@ -7,7 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: cd dir
-      run: cd 2022-2-VK-EDU-FS-Frontend-Bratukhin-Alexandr/tree/hw_2/simple-chat
+      run: cd 2022-2-VK-EDU-FS-Frontend-Bratukhin-Alexandr/simple-chat
 
     - uses: actions/setup-node@v3
       with:
