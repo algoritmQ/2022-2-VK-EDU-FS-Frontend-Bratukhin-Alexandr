@@ -1,0 +1,270 @@
+/*
+html {
+    box-sizing: border-box;
+}
+*/
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(55, 55, 55);
+    color: #333;
+    font-size: 15px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400px;
+    line-height: 20px;
+}
+
+form{
+    margin:0;
+}
+
+.form {
+    width: 400px;
+    display: inline-block;
+    position:sticky;
+    top:600px;
+    bottom:0;
+    display: flex;
+    flex-direction: row;
+    top:90%;
+}
+
+.form form{
+    width: 358px;
+}
+input[type=submit] {
+    visibility: collapse;
+}
+
+input {
+    border: 0;
+    outline: none;
+    width: calc(100%);
+    padding:15px 10px 15px 10px; 
+}
+#skrepka{
+    margin-top: 30%;
+    margin-right:25%;
+    float:right;
+    height:20px;
+    width:auto;   
+}
+#skrepka-background{
+    background-color:rgb(255, 255, 255); 
+    height:45.5px;
+    width:42px;
+    /*border:1px solid red;*/
+}
+
+#field{ 
+    margin:auto;
+    padding-top:60px;
+    background-color:rgb(245,245,245);
+    border-radius:2px;
+    min-height:650px;
+    height: auto;
+    width: 400px;
+    /*margin-bottom:144px;*/
+    position:relative;
+}
+
+#lil-header{
+    background-color:rgb(142, 36, 170);
+    width: 400px;
+    margin:auto;
+    height:18px;
+    position:fixed;
+    top:0;
+    right:0; 
+    left:0;
+    z-index:1;
+    border-bottom:0.3px solid rgba(100, 100, 100, 0.4);
+}
+
+#top-bar{
+    float:right;
+    width:50px;
+    height:16px;
+    margin-right: 2.5%;
+}
+
+.hedr{
+    display: flex;
+    flex-direction: row;
+}
+
+#header{
+    display:flex;
+    background-color:rgb(142, 36, 170);
+    width: 400px;
+    margin:auto;  
+    margin-top:18px;
+    height:42px;
+    position:fixed;
+    top:0;
+    right:0; 
+    left:0;
+    z-index:1;
+}
+
+#face{
+    width:250px;
+}
+
+#chat_name{     
+    margin-left:15px;
+    margin-top:3px;
+    color:white;
+    float:center;
+    font-size:17px;
+}
+#time_name{
+    font-size:12px;
+    color:rgba(255, 255, 255, 0.327);
+}
+#face img{  
+    height:35px;
+    width:auto;
+    margin-top:2px;
+    margin-left:30px;
+}
+/*
+#lupa img{
+    float:right;
+    margin-top:7.5px;
+    margin-right:7%;
+    height:27px;
+    width:auto;
+}
+*/
+#lupa{
+    margin-left:20px;
+}
+
+#lupa img{
+    float:right;
+    margin-top:7.5px;
+    
+    height:27px;
+    width:auto;
+}
+
+/*
+#dots img{
+    float:right;
+    margin-top:7.5px;
+    margin-right:6%;
+    height:27px;
+    width:auto;
+}*/
+
+#dots img{
+    float:right;
+    margin-top:7.5px;
+    margin-left:30px;
+    height:27px;
+    width:auto;
+}
+
+#arrow img{
+    float:left;
+    margin-top:11px;
+    margin-left:20px;
+    height:20px;
+    width:auto;
+}
+
+#messages{
+    display: flex;
+    flex-direction:column;
+}
+
+.message {
+    /*правила для ширины сообщений*/  
+    display:block;
+    float:right;
+    clear:both;/*перенос строки после нового эл-та */   
+    background-color:rgba(180, 40, 154, 0.296);
+    margin: 4px 0;
+    padding: 10px;
+    border-radius:4px 4px 0 4px;
+    margin-right:10px;
+    text-align:right;
+    overflow-wrap: anywhere;
+    position:relative;
+    align-self:flex-end;
+}
+/*хвостик к сообщению*/
+.message::after{
+    content:' ';
+    position:absolute;
+    right:-10px;
+    bottom:0px;
+    border: 5px solid transparent; 
+    border-bottom: 5px solid rgba(180, 40, 154, 0.296);
+    border-left: 5px solid rgba(180, 40, 154, 0.296);
+}
+
+/*начало*/
+.getMessage {
+    /*правила для ширины сообщений*/  
+    display:block;
+    float:right;
+    clear:both;/*перенос строки после нового эл-та */   
+    background-color:rgba(87, 192, 85, 0.296);
+    margin: 4px 0;
+    padding: 10px;
+    border-radius:4px 4px 4px 0;
+    margin-left:10px;
+    text-align:right;
+    overflow-wrap: anywhere;
+    position:relative;
+    align-self:flex-start;
+}
+/*хвостик к сообщению*/
+.getMessage::after{
+    content:' ';
+    position:absolute;
+    left:-10px;
+    bottom:0px;
+    border: 5px solid transparent; 
+    border-right: 5px solid rgba(87, 192, 85, 0.296);
+    border-bottom: 5px solid rgba(87, 192, 85, 0.296);
+}
+/*конец*/
+
+/*
+.getMessage {
+    
+    display:flex;
+    float:left;
+    clear:both;  
+    background-color:rgba(103, 214, 108, 0.296);
+    margin: 4px 0;
+    
+    padding: 10px;
+    
+    text-align:left;
+    flex-direction: column;
+    align-self:flex-start;
+}
+.getMessage::after{
+    content:' ';
+    position:absolute;
+    right:-10px;
+    bottom:0px;
+    border: 5px solid transparent; 
+    border-bottom: 5px solid rgba(180, 40, 154, 0.296);
+    border-left: 5px solid rgba(180, 40, 154, 0.296);
+}
+*/
+    /* стили для ссылок */
+.link img {width:128px; height:128px; transition-duration: 0.3s;}
+    
+.link:hover img{transform:scale(1.2)}
+.link:hover text{transform:scale(1.2)}
