@@ -6,16 +6,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: cd dir
-      run: cd 2022-2-VK-EDU-FS-Frontend-Bratukhin-Alexandr/simple-chat
-
     - uses: actions/setup-node@v3
       with:
         node-version: 16
     - name: Install npm deps
-      #working-directory: ./simple-chat
+      working-directory: ./simple-chat
       run: npm i
     - name: Build app
+      working-directory: ./simple-chat
       run: npm run build
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
