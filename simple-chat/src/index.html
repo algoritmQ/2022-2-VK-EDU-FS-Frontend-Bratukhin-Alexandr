@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Send a message</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
+    <body>
+        <div id = "lil-header"><img id = "top-bar" src = "images/top_header (2).png"></div>
+        <div id = "header">
+            <div class = "hedr" id = "arrow"><a class = "link" href = ""><img class = "header-imgs" src = "images/arrow.png"></a></div>
+            <div class = "hedr" id = "face"><img class = "header-imgs"  src = "images/face.png">
+            <span id = "chat_name">Алексей Gров<br><span id = "time_name">был 3 часа назад</span></span>  </div>   
+            
+            
+            <div class = "hedr" id = "lupa"><a class = "link" href = ""><img class = "header-imgs"  src = "images/lupa1.png"></a></div>       
+            <div class = "hedr" id = "dots"><a class = "link" href = ""><img class = "header-imgs"  src = "images/dots.png"></a></div>
+                     
+        </div>
+        <div id = "field">                 
+            
+            <div id = "messages">
+                <div class = "getMessage" >Привет!</div>
+                <div class = "getMessage" > Как твои дела?</div>
+            </div>
+                
+            <div class="form">
+            <form  action="/">     
+                <input class="form-input" name="message-text" placeholder="Сообщение" type="text">                       
+            </form>
+            <div id = "skrepka-background"><a class = "link"><img id = "skrepka" src = "images/skrepka.png"></a></div>
+            </div>
+            </div>
+        
+            <script>
+                const form = document.querySelector('form');
+                const input = document.querySelector('.form-input');
+                const message = document.querySelector('.message');
+                const getMessage = document.querySelector('.getMessage');
+    
+                form.addEventListener('key-press', this.handleKeyPress.bind(this));
+                form.addEventListener('submit', this.handleSubmit.bind(this));
+                /*кнопка для очистки локал стораге*/
+
+                function handleSubmit (event) {    
+                    event.preventDefault();
+                    const message = document.createElement("div");
+                    message.classList.add('message');
+                    const text = document.createElement("div");
+                    text.classList.add('message-text');
+                    const textNode = document.createTextNode(input.value);
+                    text.appendChild(textNode);                
+                    
+                    const time = document.createElement("div");
+                    time.classList.add('message-time');
+                    const currentDate = new Date();
+                    const timeNode = document.createTextNode(currentDate.getHours() + ":" + currentDate.getMinutes());
+                    time.appendChild(timeNode);
+                    
+                    message.appendChild(text);
+                    message.appendChild(time);
+                    
+                    const messages = document.getElementById("messages");
+                    messages.appendChild(message);
+                    Dop();                  
+                    input.value = '';                        
+                }
+                if (localStorage.getItem('Chat')){
+                        messages.innerHTML = localStorage.getItem('Chat');
+                    }
+                function Dop() {
+                        mes = messages.innerHTML;
+                        localStorage.setItem('Chat', mes);
+                    }
+                function handleKeyPress (event) {
+                    if (event.keyCode === 13) {
+                        form.dispatchEvent(new Event('submit'));                         
+                    }
+                }
+            </script>             
+    </body>
+</html>
